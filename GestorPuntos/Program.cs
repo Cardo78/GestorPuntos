@@ -14,6 +14,7 @@ namespace GestorPuntos
         [STAThread]
         static void Main()
         {
+            //Revisión del código
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new GestorPuntos());
