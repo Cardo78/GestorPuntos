@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace GestorPuntos
     public partial class GestorPuntos : MetroFramework.Forms.MetroForm
     {
         Farmanager.Farmanager far;
+        
 
 
         public GestorPuntos()
@@ -449,9 +451,44 @@ namespace GestorPuntos
         }
 
         #endregion
+        //Todos
+        private void metroButton6_Click(object sender, EventArgs e)
+        {
+            allcheckbox(true);
+        }
+        //Ninguno
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            allcheckbox(false);
+        }
 
+        private void allcheckbox(bool estado)
+        {
+            try
+            {
+                List<ARTICULO> listProducts = (List<ARTICULO>)bindingSource2.DataSource;
+                String ids = "";
+                int iactivo = 0;
+                if (estado) { iactivo = 1; }
+                listProducts.ForEach(delegate (ARTICULO item)
+                {
+                    ids += item.idarticulo + ",";
+                });
+                String aux = ids.TrimEnd(',');
+                far.Update("update gesql.ges101 set lfidelizacion = " + iactivo + " where idarticulo IN (" + aux + ")");
+                metroButton1.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
+        }
 
+        private void mtbPuntosEuro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class CLIENTE

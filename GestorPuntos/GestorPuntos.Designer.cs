@@ -40,6 +40,8 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroButton6 = new MetroFramework.Controls.MetroButton();
+            this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroGrid2 = new MetroFramework.Controls.MetroGrid();
             this.CodigoArt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomArt = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,7 +90,7 @@
             // 
             // 
             this.mtbArticulo.CustomButton.Image = null;
-            this.mtbArticulo.CustomButton.Location = new System.Drawing.Point(369, 1);
+            this.mtbArticulo.CustomButton.Location = new System.Drawing.Point(359, 1);
             this.mtbArticulo.CustomButton.Name = "";
             this.mtbArticulo.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.mtbArticulo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -107,7 +109,7 @@
             this.mtbArticulo.SelectionLength = 0;
             this.mtbArticulo.SelectionStart = 0;
             this.mtbArticulo.ShortcutsEnabled = true;
-            this.mtbArticulo.Size = new System.Drawing.Size(391, 23);
+            this.mtbArticulo.Size = new System.Drawing.Size(381, 23);
             this.mtbArticulo.TabIndex = 0;
             this.mtbArticulo.UseSelectable = true;
             this.mtbArticulo.WaterMark = "Descripción";
@@ -151,9 +153,9 @@
             // metroButton1
             // 
             this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton1.Location = new System.Drawing.Point(543, 8);
+            this.metroButton1.Location = new System.Drawing.Point(625, 8);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 43);
+            this.metroButton1.Size = new System.Drawing.Size(62, 43);
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "Buscar";
             this.metroButton1.UseSelectable = true;
@@ -168,12 +170,14 @@
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(629, 356);
+            this.metroTabControl1.Size = new System.Drawing.Size(695, 356);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.metroButton6);
+            this.metroTabPage1.Controls.Add(this.metroButton5);
             this.metroTabPage1.Controls.Add(this.metroGrid2);
             this.metroTabPage1.Controls.Add(this.mtbPuntosEuro);
             this.metroTabPage1.Controls.Add(this.mtbTotalPArticulo);
@@ -185,12 +189,34 @@
             this.metroTabPage1.HorizontalScrollbarSize = 10;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(621, 314);
+            this.metroTabPage1.Size = new System.Drawing.Size(687, 314);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Articulos";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // metroButton6
+            // 
+            this.metroButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButton6.Location = new System.Drawing.Point(516, 18);
+            this.metroButton6.Name = "metroButton6";
+            this.metroButton6.Size = new System.Drawing.Size(43, 24);
+            this.metroButton6.TabIndex = 12;
+            this.metroButton6.Text = "Todos";
+            this.metroButton6.UseSelectable = true;
+            this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
+            // 
+            // metroButton5
+            // 
+            this.metroButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButton5.Location = new System.Drawing.Point(565, 19);
+            this.metroButton5.Name = "metroButton5";
+            this.metroButton5.Size = new System.Drawing.Size(54, 24);
+            this.metroButton5.TabIndex = 11;
+            this.metroButton5.Text = "Ninguno";
+            this.metroButton5.UseSelectable = true;
+            this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
             // metroGrid2
             // 
@@ -244,7 +270,7 @@
             this.metroGrid2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid2.Size = new System.Drawing.Size(614, 225);
+            this.metroGrid2.Size = new System.Drawing.Size(680, 225);
             this.metroGrid2.TabIndex = 10;
             this.metroGrid2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid2_CellClick);
             // 
@@ -302,7 +328,7 @@
             this.mtbPuntosEuro.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mtbPuntosEuro.CustomButton.UseSelectable = true;
             this.mtbPuntosEuro.Lines = new string[0];
-            this.mtbPuntosEuro.Location = new System.Drawing.Point(468, 288);
+            this.mtbPuntosEuro.Location = new System.Drawing.Point(534, 288);
             this.mtbPuntosEuro.MaxLength = 32767;
             this.mtbPuntosEuro.Name = "mtbPuntosEuro";
             this.mtbPuntosEuro.PasswordChar = '\0';
@@ -319,6 +345,7 @@
             this.mtbPuntosEuro.WaterMark = "Puntos x Euro";
             this.mtbPuntosEuro.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mtbPuntosEuro.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mtbPuntosEuro.Click += new System.EventHandler(this.mtbPuntosEuro_Click);
             // 
             // mtbTotalPArticulo
             // 
@@ -335,7 +362,7 @@
             this.mtbTotalPArticulo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mtbTotalPArticulo.CustomButton.UseSelectable = true;
             this.mtbTotalPArticulo.Lines = new string[0];
-            this.mtbTotalPArticulo.Location = new System.Drawing.Point(302, 288);
+            this.mtbTotalPArticulo.Location = new System.Drawing.Point(368, 288);
             this.mtbTotalPArticulo.MaxLength = 32767;
             this.mtbTotalPArticulo.Name = "mtbTotalPArticulo";
             this.mtbTotalPArticulo.PasswordChar = '\0';
@@ -369,7 +396,7 @@
             this.metroTabPage2.HorizontalScrollbarSize = 10;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(621, 314);
+            this.metroTabPage2.Size = new System.Drawing.Size(687, 314);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Clientes";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -469,7 +496,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(52, 281);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(79, 19);
             this.metroLabel1.TabIndex = 9;
             this.metroLabel1.Text = "Total Puntos";
             // 
@@ -602,7 +629,7 @@
             this.metroTabPage3.HorizontalScrollbarSize = 10;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(621, 314);
+            this.metroTabPage3.Size = new System.Drawing.Size(687, 314);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "Configuración";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
@@ -656,7 +683,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 436);
+            this.ClientSize = new System.Drawing.Size(735, 436);
             this.Controls.Add(this.metroTabControl1);
             this.Name = "GestorPuntos";
             this.Text = "Contabilizador Puntos";
@@ -715,6 +742,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idarticulo;
+        private MetroFramework.Controls.MetroButton metroButton6;
+        private MetroFramework.Controls.MetroButton metroButton5;
     }
 }
 
